@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>  //清屏
+//函数的声明
 void sort (int a[],int n);                //排序
 int search(int a[],int n,int k);          //查找
 int insert(int a[],int n,int i,int k);    //插入
@@ -10,7 +11,7 @@ void disp(int a[],int n);                 //输出
 //主函数
 int main()
 {
-    int i, n, search_success,k,a[100],tt, option_num,t=0;    
+    int i, n, search_success,k,a[100],tt, option_num,t=0, result;    
     //按键盘输入初始化一个含有n个整数的一维数组a[]
     printf("请输入数组元素个数：\n");
     scanf("%d", &n);
@@ -29,6 +30,7 @@ int main()
             }
             case 1: {
                 //a是数组,n是数组长度
+                //函数调用
                 sort(a, n);
                 break; 
             }
@@ -58,13 +60,13 @@ int main()
                 //删除（按值k）
                 printf("请输入删除的值:\n");
                 scanf("%d", &k); 
-                n=delete(a, n, k); 
-                if(n < 0){
-                    disp(a, n);
+                result=delete(a, n, k); 
+                if(result == n){
+                    disp(a, result);
                     printf("删除失败\n");
                 }
                 else
-                    disp(a, n);
+                    disp(a, result);
                 break;
             }
             case 5: {
@@ -89,15 +91,14 @@ void sort (int a[], int n)
                 a[j] = a[j + 1];
                 a[j + 1] = t;
             }
-        printf("排序已完成！排序后的结果是：");
-    for(i = 0; i < n; i++) {
-        printf("%5d", a[i]);
-    }
+        printf("排序已完成！\n");
+        disp(a, n);
     printf("\n");
     getchar();
 
 }
 
+//函数的实现
 
 //查找（按值k查找下标）
 int search(int a[],int n,int k)          
@@ -130,21 +131,20 @@ int insert(int a[],int n,int i,int k)
 }
 
 
-//删除值为k的元素
+//删除长度为n的a数组中值为k的元素，返回值是数组长度
 int delete(int a[],int n,int k)          
 {
-    int flag=0,i,j,t,jishu;
+    int i,j;
     for(i = 0; i < n; i++)
     {    
         if(a[i] == k){
-            flag = 1;
             for(j = i; j < n - 1; j++){
                 a[j] = a[j+1];   
             }
             return n - 1;
         }
         }
-        return -1;
+        return n;
 }
 
 

@@ -8,8 +8,9 @@ int main()
 		i = n / 100;       //分出百位数字 
 		j = (n - i * 100) / 10;        //分出十位数字
 	    k = n % 10;        //分出个位数字
-		if(n == i * i * i + j * j * j + k * k * k)
-		printf("%d ,", n); 
+		if(n == i * i * i + j * j * j + k * k * k){
+			printf("%d ,", n);
+			 }
 	}
     printf("\n");
 }
