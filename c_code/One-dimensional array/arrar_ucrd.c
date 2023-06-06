@@ -26,7 +26,7 @@ int main()
         switch(option_num)
         {
             case 0: {
-                return 0; 
+                return 0;
             }
             case 1: {
                 //a是数组,n是数组长度

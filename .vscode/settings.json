@@ -39,5 +39,6 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "files.associations": {
     "__locale": "c"
-  }
+  },
+  "C_Cpp.errorSquiggles": "enabled"
 }
