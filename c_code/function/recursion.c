@@ -16,9 +16,11 @@ int Fibon(int n)
 	   return Fibon(n-1)+ Fibon(n-2);
    }
 }
+
+
 int main()
 {
-	for (int i = 1; i <= 10; i++)
+	for (int i = 1; i <= 40; i++)
 	{
 		printf("%d ", Fibon(i));
 	}
